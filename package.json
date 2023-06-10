@@ -26,14 +26,19 @@
     ]
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.2"
+    "react-hook-form": "^7.44.3",
+    "react-input-mask": "^2.0.4",
+    "react-router-dom": "^6.8.2",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.10",
     "@types/react": "^18.0.29",
     "@types/react-dom": "^18.0.11",
+    "@types/react-input-mask": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
     "@vitejs/plugin-react": "^3.1.0",

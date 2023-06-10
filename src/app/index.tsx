@@ -1,14 +1,14 @@
-import { NotFound } from 'components/NotFound';
 import './index.scss';
-import { Main } from 'components/Main';
-import { Step1 } from 'components/Step1';
-import { Step2 } from 'components/Step2';
-import { Step3 } from 'components/Step3';
+import { Main } from 'pages/MainPage';
+import { Step1 } from 'pages/Step1';
+import { Step2 } from 'pages/Step2';
+import { Step3 } from 'pages/Step3';
+import { NotFound } from 'pages/NotFound';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 export const App = () => {
   return (
-    <div className="App">
+    <div className="аpp">
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/step1" element={<Step1 />} />
