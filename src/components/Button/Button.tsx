@@ -2,11 +2,11 @@ import './Button.scss';
 
 type PropsType = {
   label: string;
-  ID: string;
+  id: string;
 };
 
 const Button = (props: PropsType) => {
-  return <button id={props.ID}>{props.label}</button>;
+  return <button id={props.id}>{props.label}</button>;
 };
 
 export default Button;

@@ -68,7 +68,7 @@ export const MainPageForm = () => {
         />
         {errors.email && <div className="error">{String(errors.email?.message)}</div>}
       </div>
-      <Button label="Начать" ID="button-start" />
+      <Button label="Начать" id="button-start" />
     </form>
   );
 };

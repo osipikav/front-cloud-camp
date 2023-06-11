@@ -1,0 +1,64 @@
+// .step-1 {
+//   margin-bottom: 4rem;
+// }
+.input-item {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    margin-bottom: 0.5rem;
+    // font-family: 'SB Sans Interface';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .input {
+    max-width: 300px;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+  }
+  .error {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.48);
+    margin-top: 0.5rem;
+  }
+}
+
+#react-select-3-listbox {
+  max-width: 300px;
+  margin: 0;
+  padding: 0;
+
+  .custom-select__menu-list {
+    max-width: 300px;
+
+    .custom-select__option {
+      display: flex;
+      align-items: center;
+      height: 36px;
+      margin: 0;
+    }
+  }
+}
+.custom-select__control {
+  height: 44px;
+  max-width: 300px;
+}
+.custom-select__indicator-separator {
+  display: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
