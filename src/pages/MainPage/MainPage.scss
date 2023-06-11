@@ -5,7 +5,6 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     padding-bottom: 1.5rem;
     display: flex;
-
     width: 100%;
 
     .avatar {
@@ -39,26 +38,26 @@
         font-size: 20px;
         line-height: 26px;
       }
-      .linksList {
+      .links-list {
         display: flex;
         flex-direction: row;
         gap: 1rem;
 
-        .linksItem {
+        .links-item {
           display: flex;
           align-items: center;
           justify-content: center;
-        }
 
-        a {
-          margin-left: 0.25rem;
-          text-decoration: none;
-          // font-family: 'SB Sans Interface';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 12px;
-          line-height: 16px;
-          color: #5558fa;
+          a {
+            margin-left: 0.25rem;
+            text-decoration: none;
+            // font-family: 'SB Sans Interface';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            color: #5558fa;
+          }
         }
       }
     }

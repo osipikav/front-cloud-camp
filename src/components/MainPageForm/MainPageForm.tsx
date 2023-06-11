@@ -1,7 +1,7 @@
+import './MainPageForm.scss';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import styles from './styles.module.scss';
 import Button from 'components/Button/Button';
 import InputMask from 'react-input-mask';
 
@@ -40,33 +40,33 @@ export const MainPageForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className={styles.inputItem}>
-        <label className={styles.label} htmlFor="phone">
+      <div className="input-item">
+        <label className="label" htmlFor="phone">
           Номер телефона
         </label>
         <InputMask
           mask="+7 (999) 999-99-99"
           maskChar=""
-          className={styles.input}
+          className="input"
           type="text"
           id="phone"
           placeholder="+7 999 999-99-99"
           {...register('phone')}
         />
-        {errors.phone && <div className={styles.error}>{String(errors.phone?.message)}</div>}
+        {errors.phone && <div className="error">{String(errors.phone?.message)}</div>}
       </div>
-      <div className={styles.inputItem}>
-        <label className={styles.label} htmlFor="email">
+      <div className="input-item">
+        <label className="label" htmlFor="email">
           Email
         </label>
         <input
-          className={styles.input}
+          className="input"
           type="email"
           id="email"
           placeholder="tim.jennings@example.com"
           {...register('email')}
         />
-        {errors.email && <div className={styles.error}>{String(errors.email?.message)}</div>}
+        {errors.email && <div className="error">{String(errors.email?.message)}</div>}
       </div>
       <Button label="Начать" ID="button-start" />
     </form>

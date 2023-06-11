@@ -1,5 +1,5 @@
 import FolderIcon from 'assets/icons/FolderIcon/FolderIcon';
-import styles from './styles.module.scss';
+import './MainPage.scss';
 import { MainPageForm } from 'components/MainPageForm';
 
 export const Main = () => {
@@ -19,14 +19,14 @@ export const Main = () => {
   ];
 
   return (
-    <div className={styles.main}>
-      <div className={styles.header}>
-        <div className={styles.avatar}>АО</div>
-        <div className={styles.content}>
-          <div className={styles.name}>Андрей Осипик</div>
-          <ul className={styles.linksList}>
+    <div className="main">
+      <div className="header">
+        <div className="avatar">АО</div>
+        <div className="content">
+          <div className="name">Андрей Осипик</div>
+          <ul className="links-list">
             {links.map((link) => (
-              <li className={styles.linksItem} key={link.title}>
+              <li className="links-item" key={link.title}>
                 <FolderIcon />
                 <a href={link.url}>{link.title}</a>
               </li>
