@@ -54,7 +54,7 @@ export const Step1PageForm = () => {
   const onSubmit: SubmitHandler<FieldValues> = (data) => console.log(data);
 
   return (
-    <form className="step-1" onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className="input-item">
         <label className="label" htmlFor="nickname">
           Nickname
@@ -114,8 +114,8 @@ export const Step1PageForm = () => {
             },
           })}
           {...register('sex')}
-          onChange={(selectedOption) => setValue('sex', selectedOption?.value)} // Установка значения поля sex
-          value={SEX.find((option) => option.value === '')} // Установка начального значения на 'man'
+          onChange={(selectedOption) => setValue('sex', selectedOption?.value)}
+          value={SEX.find((option) => option.value === '')}
         />
         <div className="error">{errors.sex ? String(errors.sex?.message) : 'Tip'}</div>
       </div>

@@ -5,7 +5,7 @@ import { Step1PageForm } from 'components/Step1PageForm';
 
 export const Step1 = () => {
   return (
-    <div className="step1">
+    <div className="step-1">
       <ProgressLine />
       <Step1PageForm />
     </div>
