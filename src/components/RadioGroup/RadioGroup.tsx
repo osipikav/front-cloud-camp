@@ -11,7 +11,6 @@ const RadioGroup: FC<RadioInputProps> = ({ register }) => {
   const [selectedValue, setSelectedValue] = useState<string>('');
 
   const handleRadioChange = (value: string) => {
-    debugger;
     setSelectedValue(value);
   };
   const radioOptions = [
