@@ -1,0 +1,63 @@
+.progress {
+  width: 100%;
+  position: relative;
+  // overflow: hidden;
+  // display: flex;
+  // flex-direction: column;
+}
+
+#RFS-StepperContainer {
+  padding: 0;
+  & div:nth-child(1) {
+    display: flex;
+  }
+  & div:nth-child(3) {
+    display: flex;
+    justify-content: end;
+  }
+}
+#RFS-StepButton {
+  z-index: 5;
+}
+.step-line {
+  position: relative;
+  padding: 0 3px;
+  top: 12px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.08);
+  width: 100%;
+  height: 8px;
+}
+.step-line50 {
+  position: absolute;
+  background-color: #5558fa;
+  top: 12px;
+  width: 50%;
+  height: 8px;
+  border-radius: 8px;
+}
+.step-line100 {
+  position: absolute;
+  background-color: #5558fa;
+  top: 12px;
+  width: 100%;
+  height: 8px;
+  border-radius: 8px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 900;
+}
+
+.StepContainer-0-2-2 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#RFS-ConnectorContainer {
+  display: none;
+}

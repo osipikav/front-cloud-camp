@@ -2,23 +2,26 @@ import './Step2PageForm.scss';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-
+// import Button from 'components/Button/Button';
+// import Advantages from 'components/Advantages/Advantages';
+// import CheckboxGroup from 'components/CheckboxGroup/CheckboxGroup';
+// import RadioGroup from 'components/RadioGroup/RadioGroup';
 import { useState } from 'react';
 import DeleteIcon from 'assets/icons/DeleteIcon/DeleteIcon';
+import Button from 'components/Button/Button';
 
 export const Step2PageForm = () => {
-  const [advItems, setAdvItems] = useState<string[]>(['', '', '']);
-
-  const radioOptions = [
-    { id: 'field-radio-group-option-1', value: '1', label: '1' },
-    { id: 'field-radio-group-option-2', value: '2', label: '2' },
-    { id: 'field-radio-group-option-3', value: '3', label: '3' },
-  ];
-  const checkboxOptions = [
-    { id: 'field-checkbox-group-option-1', value: '1', label: '1' },
-    { id: 'field-checkbox-group-option-2', value: '2', label: '2' },
-    { id: 'field-checkbox-group-option-3', value: '3', label: '3' },
-  ];
+  // const radioOptions = [
+  //   { id: 'field-radio-group-option-1', value: '1', label: '1' },
+  //   { id: 'field-radio-group-option-2', value: '2', label: '2' },
+  //   { id: 'field-radio-group-option-3', value: '3', label: '3' },
+  // ];
+  // const checkboxOptions = [
+  //   { id: 'field-checkbox-group-option-1', value: '1', label: '1' },
+  //   { id: 'field-checkbox-group-option-2', value: '2', label: '2' },
+  //   { id: 'field-checkbox-group-option-3', value: '3', label: '3' },
+  // ];
+  const [advItems, setAdvItems] = useState<string[]>(['']);
 
   const handleAddAdvItem = () => {
     setAdvItems([...advItems, '']);
@@ -28,23 +31,27 @@ export const Step2PageForm = () => {
     const updatedAdvItems = [...advItems];
     updatedAdvItems.splice(index, 1);
     setAdvItems(updatedAdvItems);
+  };
 
-    console.log('upd :>> ', updatedAdvItems);
+  const handleInputChange = (value: string, index: number) => {
+    // console.log('object :>> ', value, index);
+    const updatedAdvItems = [...advItems];
+    updatedAdvItems[index] = value;
+    setAdvItems(updatedAdvItems);
+    // console.log('object :>> ', updatedAdvItems);
   };
 
   const warningMessages = {
     radio: 'Проверьте отметку',
     checkbox: 'Проверьте отметку',
-    advantages: 'Проверьте введенную информацию',
+    advantages: 'Проверьте отметку',
   };
 
   const schema = yup.object().shape({
-    checkbox: yup
-      .array(yup.string())
-      .min(1, `${warningMessages.checkbox}`)
-      .required(`${warningMessages.checkbox}`),
     radio: yup.string().required(`${warningMessages.radio}`),
-    advantages: yup.array(yup.string().min(1)).required(`${warningMessages.advantages}`),
+    checkbox: yup.array(yup.string()).required(`${warningMessages.checkbox}`),
+    advantages: yup.array(yup.string()).required(`${warningMessages.advantages}`),
+    // advantages: yup.string().required(`${warningMessages.advantages}`),
   });
 
   const {
@@ -55,9 +62,12 @@ export const Step2PageForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
-  };
+  // const onSubmit: SubmitHandler<FieldValues> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FieldValues> = () => console.log('hi');
+  // const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  //   const updatedData = { ...data, advantages: advItems };
+  //   console.log(updatedData);
+  // };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -73,7 +83,6 @@ export const Step2PageForm = () => {
                 id={`field-advantages-${index}`}
                 type="text"
                 placeholder="Placeholder"
-                // defaultValue={advItem}
                 {...register(`advantages[${index}]`)}
               />
               <div id={`button-remove-${index}`} onClick={() => handleDeleteAdvItem(index)}>
@@ -84,10 +93,21 @@ export const Step2PageForm = () => {
           <button id="button-add" onClick={handleAddAdvItem}>
             +
           </button>
+          {/* <button
+            type="submit"
+            // onClick={() => {
+            //   console.log('object :>> ');
+            // }}
+          >
+            Submit
+          </button> */}
         </div>
-        <div className="error">{errors.advantages ? warningMessages.advantages : 'Tip'}</div>
+        <div className="error">
+          {errors.advantages ? String(errors.advantages?.message) : 'Tip'}
+        </div>
       </div>
-      <div className="input-item">
+
+      {/* <div className="input-item">
         <label className="label" htmlFor="checbox-group">
           Checkbox group
         </label>
@@ -126,8 +146,13 @@ export const Step2PageForm = () => {
           ))}
         </div>
         <div className="error">{errors.radio ? String(errors.radio?.message) : 'Tip'}</div>
-      </div>
-      <button type="submit">submit</button>
+      </div> */}
+      {/* <button type="submit">submit</button> */}
+
+      {/* <div className="button-container">
+        <Button label="Назад" id="button-back" />
+        <Button label="Далее" id="button-next" />
+      </div> */}
     </form>
   );
 };
